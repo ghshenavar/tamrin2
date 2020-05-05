@@ -149,18 +149,8 @@ public class AlarmFragment extends Fragment {
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()
                 + (seconds * 1000), pendingIntent);
 
+        Toast.makeText(getActivity(), "Alarm set in " + (seconds > 0 ? seconds : 0) + " seconds", Toast.LENGTH_LONG).show();
 
-        Toast.makeText(getActivity(), "Alarm set in " + seconds + " seconds", Toast.LENGTH_LONG).show();
-//        checkAlarm();
-
-    }
-
-    public static ToggleButton getToggleButton() {
-        return toggleButton;
-    }
-
-    public static void setHasAlarm(boolean hasAlarm) {
-        AlarmFragment.hasAlarm = hasAlarm;
     }
 
     public static Context getMyContext() {
